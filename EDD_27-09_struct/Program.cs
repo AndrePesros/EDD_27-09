@@ -25,14 +25,29 @@ namespace EDD_27_09_struct
                 "\ndigite 4 para finalizar");
             return int.Parse(Console.ReadLine());
         }
-        //static dados Cadastrar()
-        //{
-        //    dados entrada = new dados();
-        //    entrada.Nome = Console.ReadLine();
-            
-            
-        //    return entrada;
-        //}
+        static dados Cadastrar(int quant)
+        {
+            dados entrada = new dados();
+            Console.WriteLine($"Cadastro da pessoa nº{quant}");
+            Console.WriteLine("Nome: ");
+            entrada.Nome = Console.ReadLine();
+            Console.WriteLine("DDD: ");
+            entrada.DDD = Console.ReadLine();
+            Console.WriteLine("Telefone: ");
+            entrada.Telefone = Console.ReadLine();
+            Console.WriteLine("Email: ");
+            entrada.Email = Console.ReadLine();
+            Console.WriteLine("Nome mae: ");
+            entrada.NomMae = Console.ReadLine();
+            Console.WriteLine("Nome pai: ");
+            entrada.NomPai = Console.ReadLine();
+            Console.WriteLine("Endereco: ");
+            entrada.Endereco = Console.ReadLine();
+            Console.WriteLine("Observação: ");
+            entrada.Observ = Console.ReadLine();
+
+            return entrada;
+        }
 
         static void Main(string[] args)
         {
@@ -45,24 +60,7 @@ namespace EDD_27_09_struct
                 {
                     case 1:
                         {
-                            Console.WriteLine($"Cadastro da pessoa nº{Listinha.Count+1}");
-                            Console.WriteLine("Nome: ");
-                            entrada.Nome = Console.ReadLine();
-                            Console.WriteLine("DDD: ");
-                            entrada.DDD = Console.ReadLine();
-                            Console.WriteLine("Telefone: ");
-                            entrada.Telefone = Console.ReadLine();
-                            Console.WriteLine("Email: ");
-                            entrada.Email = Console.ReadLine();
-                            Console.WriteLine("Nome mae: ");
-                            entrada.NomMae = Console.ReadLine();
-                            Console.WriteLine("Nome pai: ");
-                            entrada.NomPai = Console.ReadLine();
-                            Console.WriteLine("Endereco: ");
-                            entrada.Endereco = Console.ReadLine();
-                            Console.WriteLine("Observação: ");
-                            entrada.Observ = Console.ReadLine();
-                            Listinha.Add(entrada);
+                            Listinha.Add(Cadastrar(Listinha.Count+1));
                         }
                         break;
                     case 2:
@@ -73,8 +71,6 @@ namespace EDD_27_09_struct
                                 Console.WriteLine($"|| Nome: {d.Nome}|| Telefone: ({d.DDD}){d.Telefone}|| Email: {d.Email}|| Mãe: {d.NomMae}|| Pai: {d.NomPai}|| Endereco: {d.Endereco}; {d.Observ}||");
                             }
                         }
-                        
-                        
                         break;
                     case 3:
                         {
